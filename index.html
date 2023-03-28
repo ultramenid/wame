@@ -25,22 +25,34 @@
         let a = document.getElementById('hasil')
         // get first character a
         let firstChar = this.message[0]
-        // change to 62 (country number indonesia)
-        let replaced = firstChar.replace(firstChar, '62');
-        // remain number
-        let remain = this.message.substring(1)
+    
 
-        // combine number
-        let result =  replaced + remain
+        if(firstChar == '+'){
+            let remove3 = this.message.slice(3)
+            let combine = '62'+this.message.substring(3)
+            let result = combine.replace(/[@\!\#\$\%\^\&\*() -]/g, '')
+            this.hasil = result
+            
+            a.setAttribute("href", "https://wa.me/"+result) 
+        }else if(firstChar == 6){
+            let remove3 = this.message.slice(2)
+            let combine = '62'+this.message.substring(2)
+            let result = combine.replace(/[@\!\#\$\%\^\&\*() -]/g, '')
+            this.hasil = result
+            a.setAttribute("href", "https://wa.me/"+result) 
 
-        //remove space and some character
-        let num = result.replace(/[@\!\#\$\%\^\&\*() -]/g, '')
+        }else if(firstChar == 0){
+            let remove3 = this.message.slice(1)
+            let combine = '62'+this.message.substring(1)
+            let result = combine.replace(/[@\!\#\$\%\^\&\*() -]/g, '')
+            this.hasil = result
+            a.setAttribute("href", "https://wa.me/"+result) 
+        }else{
+            this.hasil = 'Phone number invalid or indonesia only'
+            a.setAttribute("href", "#") 
 
-        //set hasil text
-        this.hasil = num
-
-        //set href attribute with link + combine number
-        a.setAttribute("href", "https://wa.me/"+num) 
+        }
+        
     }
     
 </script>

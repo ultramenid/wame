@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wa</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+
+</head>
+<body class="h-screen w-full flex items-center justify-center  bg-black" >
+    <div  x-data="{message:'', hasil:'', open}" class=" flex flex-col space-y-10 items-center">
+        <input autofocus type="text" @keyup.enter="changenumber" @key type="text" x-model="message" class="shadow-lg rounded w-96 text-center px-4 py-4 border-black border focus:outline-none">
+     
+        <a href="" x-text="hasil" id="hasil" class="text-2xl font-bold text-white ">
+        
+        
+    </div>
+
+</body>
+<script>
+    function changenumber(){
+        let a = document.getElementById('hasil')
+        let firstChar = this.message[0]
+        let replaced = firstChar.replace(firstChar, '62');
+        let remain = this.message.substring(1)
+
+        let result =  replaced + remain
+
+        let num = result.replace(/[() -]/g, '')
+
+        this.hasil = num
+        a.setAttribute("href", "https://wa.me/"+num) 
+    }
+    
+</script>
+</html>

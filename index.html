@@ -12,7 +12,7 @@
 </head>
 <body class="h-screen w-full flex items-center justify-center  bg-black" >
     <div  x-data="{message:'', hasil:'', open}" class=" flex flex-col space-y-10 items-center">
-        <input autofocus type="text" @keyup.enter="changenumber" @key type="text" x-model="message" class="shadow-lg rounded sm:w-60 w-full text-center px-4 py-4 border-black border focus:outline-none">
+        <input placeholder="phone number" autofocus type="text" @keyup.enter="changenumber" @key type="text" x-model="message" class="shadow-lg rounded sm:w-60 w-full text-center px-4 py-4 border-black border focus:outline-none">
      
         <a href="" x-text="hasil" id="hasil" class="text-2xl font-bold text-white underline">
         

@@ -34,7 +34,7 @@
         let result =  replaced + remain
 
         //remove space and some character
-        let num = result.replace(/[() -]/g, '')
+        let num = result.replace(/[@\!\#\$\%\^\&\*() -]/g, '')
 
         //set hasil text
         this.hasil = num
